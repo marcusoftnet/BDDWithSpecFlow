@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Dev\Avega.BDD.SpecFlow - Copy\Avega.BDD.SpecFlow.Specs\bin\Debug\Avega.BDD.SpecFlow.Specs.dll" total="4" errors="1" failures="0" not-run="0" inconclusive="1" ignored="0" skipped="0" invalid="0" date="2010-02-11" time="11:54:36">
+  <environment nunit-version="2.5.2.9222" clr-version="2.0.50727.4927" os-version="Microsoft Windows NT 6.1.7600.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.5.2\bin\net-2.0" machine-name="MARCUSHAMMAD157" user="Administrator" user-domain="MARCUSHAMMAD157" />
+  <culture-info current-culture="sv-SE" current-uiculture="en-US" />
+  <test-suite name="C:\Dev\Avega.BDD.SpecFlow - Copy\Avega.BDD.SpecFlow.Specs\bin\Debug\Avega.BDD.SpecFlow.Specs.dll" executed="True" success="False" time="2.409" asserts="0">
+    <results>
+      <test-suite name="Avega" executed="True" success="False" time="2.392" asserts="0">
+        <results>
+          <test-suite name="BDD" executed="True" success="False" time="2.373" asserts="0">
+            <results>
+              <test-suite name="SpecFlow" executed="True" success="False" time="2.371" asserts="0">
+                <results>
+                  <test-suite name="Specs" executed="True" success="False" time="2.369" asserts="0">
+                    <results>
+                      <test-suite name="Egenskaper" executed="True" success="False" time="2.106" asserts="0">
+                        <results>
+                          <test-suite name="Filmsamling" executed="True" success="False" time="1.713" asserts="0">
+                            <results>
+                              <test-suite name="AntalFilmerFeature" description="Antal filmer" executed="True" success="False" time="1.704" asserts="0">
+                                <results>
+                                  <test-case name="Avega.BDD.SpecFlow.Specs.Egenskaper.Filmsamling.AntalFilmerFeature.NyFilmsamling" description="Ny filmsamling" executed="True" success="False" time="1.086" asserts="0">
+                                    <failure>
+                                      <message><![CDATA[Moq.MockVerificationException : The following setups were not matched:
+TextWriter x => x.WriteLine("Du har inga filmer i samlingen") (Givet_Att_Jag_Påbörjar_Min_Filmsamling_Från_Scratch() in Antal_filmer.cs: line 26)
+]]></message>
+                                      <stack-trace><![CDATA[at Moq.Mock.VerifyAll()
+at Avega.BDD.SpecFlow.Specs.Egenskaper.Filmsamling.Steg.Antal_filmer.Så_Ska_Resultatet_Vara(String resultat) in C:\Dev\Avega.BDD.SpecFlow - Copy\Avega.BDD.SpecFlow.Specs\Egenskaper\Filmsamling\Steg\Antal_filmer.cs:line 48
+at lambda_method(ExecutionScope , String )
+at TechTalk.SpecFlow.TestRunner.InvokeAction(Delegate action, Object[] arguments, MethodInfo methodInfo)
+at TechTalk.SpecFlow.TestRunner.ExecuteStepMatch(BindingMatch match, Object[] arguments)
+at TechTalk.SpecFlow.TestRunner.ExecuteStep(StepArgs stepArgs)
+at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+at Avega.BDD.SpecFlow.Specs.Egenskaper.Filmsamling.AntalFilmerFeature.NyFilmsamling() in c:\Dev\Avega.BDD.SpecFlow - Copy\Avega.BDD.SpecFlow.Specs\Egenskaper\Filmsamling\Antal_filmer.feature:line 11
+]]></stack-trace>
+                                    </failure>
+                                  </test-case>
+                                </results>
+                              </test-suite>
+                            </results>
+                          </test-suite>
+                          <test-suite name="SpecFlowDemo" executed="True" success="True" time="0.131" asserts="0">
+                            <results>
+                              <test-suite name="AdditionFeature" description="Addition" executed="True" success="True" time="0.128" asserts="0">
+                                <results>
+                                  <test-case name="Avega.BDD.SpecFlow.Specs.Egenskaper.SpecFlowDemo.AdditionFeature.AddTwoNumbers" description="Add two numbers" executed="True" success="True" time="0.120" asserts="1" />
+                                </results>
+                              </test-suite>
+                            </results>
+                          </test-suite>
+                          <test-suite name="SpecFlowPåSvenska" executed="True" success="False" time="0.252" asserts="0">
+                            <results>
+                              <test-suite name="AdditionFeature" description="Addition" executed="True" success="False" time="0.240" asserts="0">
+                                <results>
+                                  <test-case name="Avega.BDD.SpecFlow.Specs.Egenskaper.SpecFlowPåSvenska.AdditionFeature.LaggIhopTvaTal" description="Lägg ihop två tal" executed="True" success="False" time="0.234" asserts="0" />
+                                </results>
+                              </test-suite>
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                      <test-suite name="MoqDemo" executed="True" success="True" time="0.257" asserts="0">
+                        <results>
+                          <test-case name="Avega.BDD.SpecFlow.Specs.MoqDemo.TestarMoq" executed="True" success="True" time="0.251" asserts="5" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

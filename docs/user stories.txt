@@ -1,0 +1,19 @@
+Som filmsamlare vill jag kunna se hur många filmer jag har för att få en överblick av min samling.
+
+Som filmsamlare vill jag kunna lista alla filmer i mitt bibliotek samt se totala antal filmer för att få en överblick av min samling.
+
+Som filmsamlare vill jag kunna registrera en ny film till samlingen för att kunna utöka mitt innehav, t.ex. via kommando "add Alien".
+
+Som filmsamlare vill jag att inga dublettfilmer kan registreras för att samlingen ska vara korrekt, t.ex. via kommando "add Alien" -> "Filmen finns redan"
+
+Som filmsamlare vill jag kunna registrera ett lån av en dvd för att kunna hålla reda på vem som har lånat vilka filmer, t.ex. via kommando "loan E.T.".
+
+Som filmsamlare vill jag kunna markera återlämning av utlånad film för att veta vilka filmer jag har fått tillbaka, t.ex. via kommando "return E.T."
+
+Som filmsamlare vill jag kunna registrera ett lån av en film med datum för att kunna hålla reda på vem som har haft en film länge.
+
+Som filmsamlare vill jag kunna lista alla filmlån för att se vilka filmer som för tillfället är utlånade.
+
+Som filmsamlare vill jag kunna skicka påminnelser till de låntagare som har haft filmer lånade länge för att öka sannolikheten att jag får tillbaka filmerna.
+
+Som filmsamlare vill jag att filmer och lån ska sparas beständigt (automatiskt) för att kunna stänga av datorn utan att registret försvinner.

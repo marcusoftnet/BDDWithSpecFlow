@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{734A1EFB-7F46-4690-93BE-9CFBB55844B0}"
+	ProjectSection(SolutionItems) = preProject
+		lib\Iesi.Collections.dll = lib\Iesi.Collections.dll
+		lib\log4net.dll = lib\log4net.dll
+		lib\Moq.dll = lib\Moq.dll
+		lib\NHibernate.ByteCode.Castle.dll = lib\NHibernate.ByteCode.Castle.dll
+		lib\NHibernate.ByteCode.LinFu.dll = lib\NHibernate.ByteCode.LinFu.dll
+		lib\NHibernate.dll = lib\NHibernate.dll
+		lib\nunit.framework.dll = lib\nunit.framework.dll
+		lib\StructureMap.dll = lib\StructureMap.dll
+		lib\System.Data.SQLite.dll = lib\System.Data.SQLite.dll
+		lib\TechTalk.SpecFlow.dll = lib\TechTalk.SpecFlow.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{5A3E0A90-2C43-45C4-8D05-0437F2C48D5E}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Länkar.htm = docs\Länkar.htm
+		docs\user stories.txt = docs\user stories.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDD.SpecFlow.Specs", "BDD.SpecFlow.Specs\BDD.SpecFlow.Specs.csproj", "{14C02C61-A8D4-4D1F-BA24-C56E0195F1D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDD.SpecFlow.Domain", "BDD.SpecFlow.Domain\BDD.SpecFlow.Domain.csproj", "{F92A1B74-F61E-458C-A54E-16A1D2C8D52B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDD.SpecFlow.Tests", "BDD.SpecFlow.Tests\BDD.SpecFlow.Tests.csproj", "{6410FB73-5290-4FBB-AA30-9627A1B08003}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14C02C61-A8D4-4D1F-BA24-C56E0195F1D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C02C61-A8D4-4D1F-BA24-C56E0195F1D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C02C61-A8D4-4D1F-BA24-C56E0195F1D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C02C61-A8D4-4D1F-BA24-C56E0195F1D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F92A1B74-F61E-458C-A54E-16A1D2C8D52B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92A1B74-F61E-458C-A54E-16A1D2C8D52B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92A1B74-F61E-458C-A54E-16A1D2C8D52B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92A1B74-F61E-458C-A54E-16A1D2C8D52B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6410FB73-5290-4FBB-AA30-9627A1B08003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6410FB73-5290-4FBB-AA30-9627A1B08003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6410FB73-5290-4FBB-AA30-9627A1B08003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6410FB73-5290-4FBB-AA30-9627A1B08003}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
