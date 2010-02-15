@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using BDD.SpecFlow.Domain.Model;
+using BDD.SpecFlow.Domain.Model.Entitet;
 using BDD.SpecFlow.Domain.Vyer;
 using Moq;
 using TechTalk.SpecFlow;
