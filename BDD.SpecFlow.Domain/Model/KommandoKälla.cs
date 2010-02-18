@@ -2,5 +2,6 @@
 {
     public interface KommandoKälla
     {
+        void KörKommando(string kommando);
     }
 }

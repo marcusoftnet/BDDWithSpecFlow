@@ -8,7 +8,7 @@
 //      the code is regenerated.
 //  </auto-generated>
 // ------------------------------------------------------------------------------
-namespace BDD.SpecFlow.Specs.Egenskaper.Filmsamling
+namespace BDD.SpecFlow.Specs.EndToEnd.Egenskaper.Filmsamling
 {
     using TechTalk.SpecFlow;
     
@@ -58,7 +58,7 @@ namespace BDD.SpecFlow.Specs.Egenskaper.Filmsamling
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 9
- testRunner.Given("att jag påbörjar min filmsamling från scratch");
+ testRunner.Given("att min filmsamling är tom");
 #line 10
  testRunner.When("jag anger kommando: AntalFilmer");
 #line 11

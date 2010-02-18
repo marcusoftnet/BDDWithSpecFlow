@@ -4,22 +4,30 @@ using NHibernate;
 
 namespace BDD.SpecFlow.Domain.Infrastructure
 {
-    public class SQLiteSessionHelper : SessionHelper, IDisposable
+    public class SQLiteSessionHelper : SessionHelper
     {
+        private readonly ISessionSource _sessionSource;
         private ISession _session;
 
         public SQLiteSessionHelper(ISessionSource sessionSource)
         {
-            _session = sessionSource.CreateSession();
+            _sessionSource = sessionSource;
         }
+
         public ISession GetCurrentSession()
         {
             return _session;
         }
 
-        public void Dispose()
+        public void StartSession()
+        {
+            _session = _sessionSource.CreateSession();
+        }
+
+        public void CloseSession()
         {
             _session.Close();
+            _session.Dispose();
         }
     }
 }

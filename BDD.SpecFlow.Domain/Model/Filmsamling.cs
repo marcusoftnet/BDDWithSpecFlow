@@ -1,4 +1,5 @@
-﻿using BDD.SpecFlow.Domain.Vyer;
+﻿using BDD.SpecFlow.Domain.Infrastructure;
+using BDD.SpecFlow.Domain.Vyer;
 
 namespace BDD.SpecFlow.Domain.Model
 {
@@ -6,18 +7,25 @@ namespace BDD.SpecFlow.Domain.Model
     {
         private readonly FilmRepository _filmRepository;
         private readonly VyRepository _vyRepository;
+        private readonly SessionHelper _sessionHelper;
 
-        public Filmsamling(FilmRepository filmRepository, VyRepository vyRepository)
+        public Filmsamling(FilmRepository filmRepository, VyRepository vyRepository, SessionHelper sessionHelper)
         {
             _filmRepository = filmRepository;
             _vyRepository = vyRepository;
+            _sessionHelper = sessionHelper;
         }
 
         public void AntalFilmer()
         {
+            // starta session
+            _sessionHelper.StartSession();
+            
             var vy = _vyRepository.HämtaVy<AntalFilmerVy>(VyNamn.ANTAL_FILMER);
 
             vy.Presentera(_filmRepository.HämtaAlla().Count);
+
+            _sessionHelper.CloseSession();
         }
     }
 }

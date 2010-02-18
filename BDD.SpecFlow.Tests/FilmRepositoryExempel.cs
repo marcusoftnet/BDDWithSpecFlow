@@ -24,13 +24,14 @@ namespace BDD.SpecFlow.Tests
             _sessionSource = new SessionSource(cfg.BuildConfiguration().Properties, model);
 
             _sessionHelper = new SQLiteSessionHelper(_sessionSource);
+            _sessionHelper.StartSession();
             _sessionSource.BuildSchema(_sessionHelper.GetCurrentSession());
         }
 
         [TearDown]
         public void TearDown()
         {
-            _sessionHelper.Dispose();
+            _sessionHelper.CloseSession();
         }
 
         [Test]

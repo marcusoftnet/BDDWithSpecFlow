@@ -17,7 +17,7 @@ namespace BDD.SpecFlow.Domain.Model
         {
             var session = _sessionHelper.GetCurrentSession();
 
-            return session.CreateCriteria(typeof(Film)).List<Film>();
+            return session.CreateCriteria<Film>().List<Film>();
         }
     }
 }

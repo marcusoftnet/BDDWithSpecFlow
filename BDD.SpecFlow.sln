@@ -7,7 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{734A1EFB-7F4
 		lib\log4net.dll = lib\log4net.dll
 		lib\Moq.dll = lib\Moq.dll
 		lib\NHibernate.ByteCode.Castle.dll = lib\NHibernate.ByteCode.Castle.dll
-		lib\NHibernate.ByteCode.LinFu.dll = lib\NHibernate.ByteCode.LinFu.dll
 		lib\NHibernate.dll = lib\NHibernate.dll
 		lib\nunit.framework.dll = lib\nunit.framework.dll
 		lib\StructureMap.dll = lib\StructureMap.dll
@@ -27,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDD.SpecFlow.Domain", "BDD.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDD.SpecFlow.Tests", "BDD.SpecFlow.Tests\BDD.SpecFlow.Tests.csproj", "{6410FB73-5290-4FBB-AA30-9627A1B08003}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDD.SpecFlow.Specs.EndToEnd", "BDD.SpecFlow.Specs.EndToEnd\BDD.SpecFlow.Specs.EndToEnd.csproj", "{4AF96E12-6CA1-4B8A-8A2B-132948FBBEDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +46,10 @@ Global
 		{6410FB73-5290-4FBB-AA30-9627A1B08003}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6410FB73-5290-4FBB-AA30-9627A1B08003}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6410FB73-5290-4FBB-AA30-9627A1B08003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AF96E12-6CA1-4B8A-8A2B-132948FBBEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AF96E12-6CA1-4B8A-8A2B-132948FBBEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AF96E12-6CA1-4B8A-8A2B-132948FBBEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AF96E12-6CA1-4B8A-8A2B-132948FBBEDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

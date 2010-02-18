@@ -1,6 +1,8 @@
 ﻿using BDD.SpecFlow.Domain.Model;
 using BDD.SpecFlow.Domain.Model.Entitet;
 using FluentNHibernate;
+using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.AcceptanceCriteria;
 using FluentNHibernate.Conventions.Helpers;
@@ -23,17 +25,15 @@ namespace BDD.SpecFlow.Domain.Infrastructure
                 .Where(type => type.IsClass &&
                                !type.IsAbstract &&
                                type.Namespace.EndsWith("Entitet"));
+        }
 
-            // Nej, Marcus vet bäst - vi kör på hans konventioner
-            //return AutoMap.AssemblyOf<Film>()
-            //    .Where(t => t.Namespace.EndsWith("Entitet") && t.IsAbstract == false)
-            //    .Conventions.Add(
-            //                        PrimaryKey.Name.Is(pk => "ID"),
-            //                        ForeignKey.EndsWith("ID"),
-            //                        Table.Is(t => Inflector.Net.Inflector.Pluralize(t.EntityType.Name)))
-            //    .Conventions.Add<CustomManyToManyTableNameConvention>()
-            //    .Conventions.Add<CustomHasManyConvention>()
-            //    .Conventions.Add<CustomHasManyToManyConvention>();
+        public static ISessionSource KonfigureraDatabas(string databasFil)
+        {
+            var cfg = Fluently.Configure()
+                .Database(SQLiteConfiguration.Standard.UsingFile(databasFil));
+
+            var model = NHibernateHelper.SkapaPeristanceModel();
+            return new SessionSource(cfg.BuildConfiguration().Properties, model);
         }
     }
 

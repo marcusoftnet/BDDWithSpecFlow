@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Avega.BDD.SpecFlow.Domain")]
+[assembly: AssemblyTitle("BDD.SpecFlow.Specs.EndToEnd")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Avega.BDD.SpecFlow.Domain")]
+[assembly: AssemblyProduct("BDD.SpecFlow.Specs.EndToEnd")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("23418611-3c9c-40d0-a224-3a8abb18972e")]
+[assembly: Guid("d35ced99-7b55-49ad-8553-1b8c8463499d")]
 
 // Version information for an assembly consists of the following four values:
 //
