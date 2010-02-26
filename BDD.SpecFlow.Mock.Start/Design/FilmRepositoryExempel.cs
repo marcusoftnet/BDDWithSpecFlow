@@ -1,4 +1,5 @@
 ﻿using BDD.SpecFlow.Mock.Start.Domain.Infrastructure;
+using BDD.SpecFlow.Mock.Start.Domain.Model;
 using FluentNHibernate;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
@@ -34,18 +35,18 @@ namespace BDD.SpecFlow.Mock.Start.Design
         }
 
         // TODO: Fixa testet som failar med Could not load type NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle
-        //[Test]
-        //public void ska_hämta_en_tom_lista_då_inga_filmer_finns_i_databasen()
-        //{
-        //    // Arrange
-        //    var rep = new SQLiteFilmRepository(_sessionHelper);
+        [Test]
+        public void ska_hämta_en_tom_lista_då_inga_filmer_finns_i_databasen()
+        {
+            // Arrange
+            var rep = new SQLiteFilmRepository(_sessionHelper);
 
-        //    // act
-        //    var allaFilmer = rep.HämtaAlla();
+            // act
+            var allaFilmer = rep.HämtaAlla();
 
-        //    // Arrange
-        //    Assert.That(allaFilmer, Is.Empty);
-        //}
+            // Arrange
+            Assert.That(allaFilmer, Is.Empty);
+        }
     }
 }
 
