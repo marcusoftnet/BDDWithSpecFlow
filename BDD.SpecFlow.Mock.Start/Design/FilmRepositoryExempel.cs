@@ -34,7 +34,6 @@ namespace BDD.SpecFlow.Mock.Start.Design
             _sessionHelper.CloseSession();
         }
 
-        // TODO: Fixa testet som failar med Could not load type NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle
         [Test]
         public void ska_hämta_en_tom_lista_då_inga_filmer_finns_i_databasen()
         {
@@ -49,5 +48,4 @@ namespace BDD.SpecFlow.Mock.Start.Design
         }
     }
 }
-
 
