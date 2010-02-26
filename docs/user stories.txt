@@ -1,19 +1,55 @@
-Som filmsamlare vill jag kunna se hur många filmer jag har för att få en överblick av min samling.
+Kravbeskrivning
+===============
+Vision: En personlig filmkatalog för hantering av min filmsamling. 
+        Den ska också hålla reda på utlåningar. 
+	    En enkel klient från kommandoraden räcker tills vidare.
 
-Som filmsamlare vill jag kunna lista alla filmer i mitt bibliotek samt se totala antal filmer för att få en överblick av min samling.
+1
+För att få en överblick av min samling 
+som filmsamlare 
+vill jag kunna se hur många filmer jag har 
 
-Som filmsamlare vill jag kunna registrera en ny film till samlingen för att kunna utöka mitt innehav, t.ex. via kommando "add Alien".
+2
+För att få en överblick av min samling
+som filmsamlare 
+vill jag kunna lista alla filmer i mitt bibliotek samt se totala antal filmer 
 
-Som filmsamlare vill jag att inga dublettfilmer kan registreras för att samlingen ska vara korrekt, t.ex. via kommando "add Alien" -> "Filmen finns redan"
+3
+För att kunna utöka mitt innehav, t.ex. via kommando "add Alien"
+som filmsamlare 
+vill jag kunna registrera en ny film till samlingen
 
-Som filmsamlare vill jag kunna registrera ett lån av en dvd för att kunna hålla reda på vem som har lånat vilka filmer, t.ex. via kommando "loan E.T.".
+4
+För att samlingen ska vara korrekt, t.ex. via kommando "add Alien" -> "Filmen finns redan"
+som filmsamlare 
+vill jag att inga dublettfilmer kan registreras 
 
-Som filmsamlare vill jag kunna markera återlämning av utlånad film för att veta vilka filmer jag har fått tillbaka, t.ex. via kommando "return E.T."
+5
+För att kunna hålla reda på vem som har lånat vilka filmer, t.ex. via kommando "loan E.T.".
+som filmsamlare 
+vill jag kunna registrera ett lån av en dvd 
 
-Som filmsamlare vill jag kunna registrera ett lån av en film med datum för att kunna hålla reda på vem som har haft en film länge.
+6
+För att veta vilka filmer jag har fått tillbaka, t.ex. via kommando "return E.T."
+som filmsamlare 
+vill jag kunna markera återlämning av utlånad film 
 
-Som filmsamlare vill jag kunna lista alla filmlån för att se vilka filmer som för tillfället är utlånade.
+7
+För att kunna hålla reda på vem som har haft en film länge
+som filmsamlare 
+vill jag kunna registrera ett lån av en film med datum 
 
-Som filmsamlare vill jag kunna skicka påminnelser till de låntagare som har haft filmer lånade länge för att öka sannolikheten att jag får tillbaka filmerna.
+8
+För att se vilka filmer som för tillfället är utlånade
+som filmsamlare 
+vill jag kunna lista alla filmlån 
 
-Som filmsamlare vill jag att filmer och lån ska sparas beständigt (automatiskt) för att kunna stänga av datorn utan att registret försvinner.
+9
+För att öka sannolikheten att jag får tillbaka filmerna
+som filmsamlare 
+vill jag kunna skicka påminnelser till de låntagare som har haft filmer lånade länge 
+
+10
+För att kunna stänga av datorn utan att registret försvinner.
+som filmsamlare 
+vill jag att filmer och lån ska sparas beständigt (automatiskt) 

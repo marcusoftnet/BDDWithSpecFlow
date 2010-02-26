@@ -1,0 +1,11 @@
+Laborationsinstruktion
+
+Lab 1: 
+Utgå från MockStart
+Implementera feature 2
+Lösning finns i MockEnd
+
+Lab 2: 
+Utgå från IoCStart
+Implementera feature 2
+Lösning finns i IoCEnd
