@@ -27,25 +27,6 @@ namespace BDD.SpecFlow.IoC.Start.Egenskaper.Filmsamling.Steg
             _sessionSource.BuildSchema();
         }
 
-        private static void Skapa5TestFilmerIDatabasen(ISessionSource sessionSource)
-        {
-            using (var session = sessionSource.CreateSession())
-            {
-                using (var tx = session.BeginTransaction())
-                {
-                    session.Save(new Film { Id = 1, Name = "Alien" });
-                    session.Save(new Film { Id = 2, Name = "Star wars" });
-                    session.Save(new Film { Id = 3, Name = "Matrix[][]" });
-                    session.Save(new Film { Id = 4, Name = "Broarna i Maddison County" });
-                    session.Save(new Film { Id = 5, Name = "Rocky" });
-
-                    session.Flush();
-
-                    tx.Commit();
-                }
-            }
-        }
-
         [When(@"jag anger kommando: (.+)$")]
         public void NärJagAngerKommando(string kommando)
         {
@@ -69,6 +50,26 @@ namespace BDD.SpecFlow.IoC.Start.Egenskaper.Filmsamling.Steg
             // Verifiera mot stubimpl av vy
             _mockSystemOut.Verify(x => x.WriteLine(resultat), Times.Once());
         }
+
+        private static void Skapa5TestFilmerIDatabasen(ISessionSource sessionSource)
+        {
+            using (var session = sessionSource.CreateSession())
+            {
+                using (var tx = session.BeginTransaction())
+                {
+                    session.Save(new Film { Id = 1, Name = "Alien" });
+                    session.Save(new Film { Id = 2, Name = "E.T." });
+                    session.Save(new Film { Id = 3, Name = "Matrix[][]" });
+                    session.Save(new Film { Id = 4, Name = "Broarna i Maddison County" });
+                    session.Save(new Film { Id = 5, Name = "Jaws" });
+
+                    session.Flush();
+
+                    tx.Commit();
+                }
+            }
+        }
+
     }
 }
 

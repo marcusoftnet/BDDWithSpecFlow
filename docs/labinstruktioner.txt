@@ -1,11 +1,56 @@
 Laborationsinstruktion
 
-Lab 1: 
-Utgå från MockStart
-Implementera feature 2
-Lösning finns i MockEnd
+Lab 1: BDD med Mockning
+Utgå från projektet BDD.SpecFlow.Mock.Start.
 
-Lab 2: 
-Utgå från IoCStart
-Implementera feature 2
-Lösning finns i IoCEnd
+Läs igenom hela labinstruktionen. Fråga kursledaren om ni har frågor
+
+Implementera feature 2:
+	För att få en överblick av min samling
+	som filmsamlare 
+	vill jag kunna lista alla filmer i mitt bibliotek samt se totala antal filmer 
+
+1. Skapa feature 2 baserat på user storyn och dess scenario
+2. Kör feature 2 - notera felmeddelandet
+3. Skapa en stepdefinition baserat på utskriferna från felmeddelandet
+4. Kör feature 2 - se till att alla steg är "pending", notera att vissa variabler ska brytas ut ur ett av stegen.
+5. Uppgifter för stepdefinitionen
+	I stepdefinitionen koppla ihop de komponenter som ska utföra fuktionen
+	Använd Moq för att bli av med koppling mot NHibernates session.
+	Använd Moq på vyn för att verifiera förväntat beteende.
+	Använd Moq på Repository för att stubba ut hämtandet av filmerna.
+6. Verifiering i detalj
+	Verifiera att vyn blivit anropad för att presentera var och en av filmerna samt antalet filmer i ett "sidfotsmeddelande"
+
+När är ni klara?
+När ni tycker att SpecFlow-designen uttrycker den funktion som ni försöker utveckla
+och testet verifierar att funktionen är på plats.
+
+Om ni fastnar så kan ni titta på ett förslag på lösning i BDD.SpecFlow.Mock.End
+
+Lab 2: BDD med IoC
+Utgå från projektet BDD.SpecFlow.IoC.Start.
+
+Läs igenom hela labinstruktionen. Fråga kursledaren om ni har frågor
+
+Implementera feature 2:
+	För att få en överblick av min samling
+	som filmsamlare 
+	vill jag kunna lista alla filmer i mitt bibliotek samt se totala antal filmer 
+
+1. Skapa feature 2 baserat på user storyn och dess scenario
+2. Kör feature 2 - notera felmeddelandet
+3. Skapa en stepdefinition baserat på utskriferna från felmeddelandet
+4. Kör feature 2 - se till att alla steg är "pending", notera att vissa variabler ska brytas ut ur ett av stegen.
+5. Uppgifter för stepdefinitionen
+	I stepdefinitionen hämta ut den komponent som du ska ha som ingångs punkt från StructureMap
+	Sätt upp databasen i rätt tillstånd. (Du kan utgå från den privata metoden Skapa5TestFilmerIDatabasen()
+	Använd Moq på vyn för att verifiera förväntat beteende.	
+6. Verifiering i detalj
+	Verifiera att vyn blivit anropad för att presentera var och en av filmerna samt antalet filmer i ett "sidfotsmeddelande"
+
+När är ni klara?
+När ni tycker att SpecFlow-designen uttrycker den funktion som ni försöker utveckla
+och testet verifierar att funktionen är på plats.
+
+Om ni fastnar så kan ni titta på ett förslag på lösning i BDD.SpecFlow.IoC.End
