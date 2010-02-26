@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using BDD.SpecFlow.Mock.End.Domain.Infrastructure;
 using BDD.SpecFlow.Mock.End.Domain.Model;
 using BDD.SpecFlow.Mock.End.Domain.Model.Entitet;
@@ -12,30 +13,45 @@ namespace BDD.SpecFlow.Mock.End.Egenskaper.Filmsamling.Steg
     [Binding]
     public class FilmsamlingsSteg
     {
-        private global::BDD.SpecFlow.Mock.End.Domain.Model.Filmsamling filmsamling;
+        private Domain.Model.Filmsamling _filmsamling;
         private FuskKommandoKälla _fuskKommandoKälla;
-        private Vy _vy;
-        private FilmRepository filmRepository;
-        private VyRepository vyRepository;
+        private Mock<FilmRepository> _mockFilmRepository;
+        private VyRepository _vyRepository;
         private Mock<TextWriter> _mockSystemOut;
+
+        public FilmsamlingsSteg()
+        {
+            _mockSystemOut = new Mock<TextWriter>();
+
+            _vyRepository = new MinnesVyRepository();
+            _vyRepository.LäggTill(VyNamn.ANTAL_FILMER, new AntalFilmerVy(_mockSystemOut.Object));
+            _vyRepository.LäggTill(VyNamn.LISTA_FILMER, new ListaFilmerVy(_mockSystemOut.Object));
+
+            _mockFilmRepository = new Mock<FilmRepository>(MockBehavior.Strict);
+
+            var mockSessionhelper = new Mock<SessionHelper>();
+
+            _filmsamling = new Domain.Model.Filmsamling(_mockFilmRepository.Object, _vyRepository, mockSessionhelper.Object);
+
+            _fuskKommandoKälla = new FuskKommandoKälla(_filmsamling);
+        }
 
         [Given(@"att jag påbörjar min filmsamling från scratch")]
         public void Givet_Att_Jag_Påbörjar_Min_Filmsamling_Från_Scratch()
         {
-            _vy = new FuskVy();
-            _mockSystemOut = new Mock<TextWriter>();
+            _mockFilmRepository.Setup(x => x.HämtaAlla()).Returns(new List<Film>());
+        }
 
-            vyRepository = new MinnesVyRepository();
-            var antalFilmerVy = new AntalFilmerVy(_mockSystemOut.Object);
-            vyRepository.LäggTill(VyNamn.ANTAL_FILMER, antalFilmerVy);
+        [Given(@"att filmsamlingen innehåller (.+)$")]
+        public void GivetAttFilmsamlingenInnehallerFilmLista(string filmLista)
+        {
+            var bortTagnaCitationsTecken = filmLista.Replace("\"", string.Empty);
+            var filmer = bortTagnaCitationsTecken.Split(',');
+            var testdataFilmLista = filmer.Select(
+                                            (t, i) => new Film { Id = i + 1, Namn = t }
+                                        ).ToList();
 
-            filmRepository = new FuskFilmRepository();
-
-            var mockSessionhelper = new Mock<SessionHelper>();
-            
-            filmsamling = new Domain.Model.Filmsamling(filmRepository, vyRepository, mockSessionhelper.Object); 
-
-            _fuskKommandoKälla = new FuskKommandoKälla(filmsamling);
+            _mockFilmRepository.Setup(x => x.HämtaAlla()).Returns(testdataFilmLista);
         }
 
         [When(@"jag anger kommando: (.+)$")] // Regexp för vilket tecken som helst till slutet av raden
@@ -48,22 +64,28 @@ namespace BDD.SpecFlow.Mock.End.Egenskaper.Filmsamling.Steg
         public void Så_Ska_Resultatet_Vara(string resultat)
         {
             _mockSystemOut.Verify(x => x.WriteLine(resultat), Times.Once());
+            _mockFilmRepository.Verify();
+        }
+
+        [Then(@"ska resultatet vara:")]
+        public void Så_Ska_Resultatet_Vara(Table utdataRader)
+        {
+            _mockFilmRepository.Verify();
+            
+            foreach (var row in utdataRader.Rows)
+            {
+                var utdataRad = row["Rad"];
+                _mockSystemOut.Verify(x => x.WriteLine(utdataRad), Times.Once());
+            }
         }
     }
 
-    public class FuskFilmRepository : FilmRepository
-    {
-        public IList<Film> HämtaAlla()
-        {
-            return new List<Film>();
-        }
-    }
 
     public class FuskKommandoKälla : KommandoKälla
     {
-        private readonly global::BDD.SpecFlow.Mock.End.Domain.Model.Filmsamling _filmsamling;
+        private readonly Domain.Model.Filmsamling _filmsamling;
 
-        public FuskKommandoKälla(global::BDD.SpecFlow.Mock.End.Domain.Model.Filmsamling filmsamling)
+        public FuskKommandoKälla(Domain.Model.Filmsamling filmsamling)
         {
             _filmsamling = filmsamling;
         }
@@ -74,13 +96,14 @@ namespace BDD.SpecFlow.Mock.End.Egenskaper.Filmsamling.Steg
             {
                 _filmsamling.AntalFilmer();
             }
+
+            if (kommando == "ListaFilmer")
+            {
+                _filmsamling.ListaFilmer();
+            }
         }
     }
 
-    public class FuskVy : Vy
-    {
-        public string Meddelande { get; private set; }
-    }
 }
 
 

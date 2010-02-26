@@ -11,6 +11,7 @@ namespace BDD.SpecFlow.Mock.End.Domain.Vyer
 
     public enum VyNamn
     {
-        ANTAL_FILMER
+        ANTAL_FILMER,
+        LISTA_FILMER
     }
 }

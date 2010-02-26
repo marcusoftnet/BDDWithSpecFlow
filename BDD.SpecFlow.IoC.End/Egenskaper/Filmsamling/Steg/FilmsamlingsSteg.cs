@@ -33,11 +33,11 @@ namespace BDD.SpecFlow.IoC.End.Egenskaper.Filmsamling.Steg
             {
                 using (var tx = session.BeginTransaction())
                 {
-                    session.Save(new Film { Id = 1, Name = "Alien" });
-                    session.Save(new Film { Id = 2, Name = "Star wars" });
-                    session.Save(new Film { Id = 3, Name = "Matrix[][]" });
-                    session.Save(new Film { Id = 4, Name = "Broarna i Maddison County" });
-                    session.Save(new Film { Id = 5, Name = "Rocky" });
+                    session.Save(new Film { Id = 1, Namn = "Alien" });
+                    session.Save(new Film { Id = 2, Namn = "Star wars" });
+                    session.Save(new Film { Id = 3, Namn = "Matrix[][]" });
+                    session.Save(new Film { Id = 4, Namn = "Broarna i Maddison County" });
+                    session.Save(new Film { Id = 5, Namn = "Rocky" });
 
                     session.Flush();
 

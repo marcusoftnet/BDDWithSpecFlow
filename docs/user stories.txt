@@ -17,10 +17,11 @@ vill jag kunna lista alla filmer i mitt bibliotek samt se totala antal filmer
 Givet att filmsamlingen innehåller "Alien", "E.T." och "Jaws"
 När jag anger kommando: ListaFilmer
 Så ska resultatet vara:
-|Alien|
-|E.T.|
-|Jaws|
-|Du har 3 filmer i samlingen|
+| Filmnamn |
+| Alien |
+| E.T. |
+| Jaws |
+| Du har 3 filmer i samlingen |
 
 3
 För att kunna utöka mitt innehav, t.ex. via kommando "add Alien"
