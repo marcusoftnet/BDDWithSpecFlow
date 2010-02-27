@@ -17,7 +17,7 @@ vill jag kunna lista alla filmer i mitt bibliotek samt se totala antal filmer
 Givet att filmsamlingen innehåller "Alien", "E.T." och "Jaws"
 När jag anger kommando: ListaFilmer
 Så ska resultatet vara:
-| Filmnamn |
+| Rad |
 | Alien |
 | E.T. |
 | Jaws |

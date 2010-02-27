@@ -87,6 +87,7 @@
     <Compile Include="Domain\Model\KonsolKommandoKälla.cs" />
     <Compile Include="Domain\Model\SQLiteFilmRepository.cs" />
     <Compile Include="Domain\Vyer\AntalFilmerVy.cs" />
+    <Compile Include="Domain\Vyer\ListaFilmerVy.cs" />
     <Compile Include="Domain\Vyer\MinnesVyRepository.cs" />
     <Compile Include="Domain\Vyer\Vy.cs" />
     <Compile Include="Domain\Vyer\VyRepository.cs" />
@@ -94,6 +95,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Antal_filmer.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Egenskaper\Filmsamling\Lista_filmer.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lista_filmer.feature</DependentUpon>
     </Compile>
     <Compile Include="Egenskaper\Filmsamling\Steg\FilmsamlingsSteg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +109,10 @@
     <None Include="Egenskaper\Filmsamling\Antal_filmer.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Antal_filmer.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Egenskaper\Filmsamling\Lista_filmer.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Lista_filmer.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

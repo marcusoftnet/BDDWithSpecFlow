@@ -43,13 +43,9 @@ namespace BDD.SpecFlow.Mock.End.Egenskaper.Filmsamling.Steg
         }
 
         [Given(@"att filmsamlingen innehåller (.+)$")]
-        public void GivetAttFilmsamlingenInnehallerFilmLista(string filmLista)
+        public void GivetAttFilmsamlingenInnehallerFilmLista(string filmListaSträng)
         {
-            var bortTagnaCitationsTecken = filmLista.Replace("\"", string.Empty);
-            var filmer = bortTagnaCitationsTecken.Split(',');
-            var testdataFilmLista = filmer.Select(
-                                            (t, i) => new Film { Id = i + 1, Namn = t }
-                                        ).ToList();
+            List<Film> testdataFilmLista = IndataSträngTillFilmLista(filmListaSträng);
 
             _mockFilmRepository.Setup(x => x.HämtaAlla()).Returns(testdataFilmLista);
         }
@@ -71,8 +67,7 @@ namespace BDD.SpecFlow.Mock.End.Egenskaper.Filmsamling.Steg
         public void Så_Ska_Resultatet_Vara(Table utdataRader)
         {
             _mockFilmRepository.Verify();
-
-
+            
             // TODO: Fix to verify each call - don't know the Moq-syntax for that ... yet
             _mockSystemOut.Verify(x => x.WriteLine(utdataRader.Rows[0]["Rad"]), Times.Once());
 
@@ -81,6 +76,16 @@ namespace BDD.SpecFlow.Mock.End.Egenskaper.Filmsamling.Steg
             //    var utdataRad = row["Rad"];
             //    _mockSystemOut.Verify(x => x.WriteLine(utdataRad), Times.Once());
             //}
+        }
+
+
+        private List<Film> IndataSträngTillFilmLista(string filmListaSträng)
+        {
+            var ingaCitationsTecken = filmListaSträng.Replace("\"", string.Empty);
+            var filmer = ingaCitationsTecken.Split(',');
+            return filmer.Select(
+                (t, i) => new Film { Id = i + 1, Namn = t }
+                ).ToList();
         }
     }
 

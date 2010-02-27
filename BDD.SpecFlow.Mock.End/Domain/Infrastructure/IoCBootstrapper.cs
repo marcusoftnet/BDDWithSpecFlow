@@ -10,7 +10,7 @@ namespace BDD.SpecFlow.Mock.End.Domain.Infrastructure
     {
         public static void Init()
         {
-            StructureMapConfiguration.AddRegistry(new MovieRegistry());
+            ObjectFactory.Initialize(x => x.AddRegistry(new MovieRegistry()));
         }
     }
 

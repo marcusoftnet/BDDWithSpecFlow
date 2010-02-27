@@ -10,13 +10,7 @@ namespace BDD.SpecFlow.Mock.Start.Design
         private MinnesVyRepository _repository;
 
 
-        private class TestView : Vy
-        {
-            public string Meddelande
-            {
-                get { return string.Empty; }
-            }
-        }
+        private class TestView : Vy { }
 
         [Test]
         public void ska_kunna_hämta_vy_av_en_viss_typ()

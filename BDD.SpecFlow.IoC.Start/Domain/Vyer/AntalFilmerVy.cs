@@ -11,11 +11,7 @@ namespace BDD.SpecFlow.IoC.Start.Domain.Vyer
             _textWriter = textWriter;
         }
 
-        public string Meddelande
-        {
-            get { return string.Empty; }
-        }
-
+        
         public void Presentera(int antalFilmer)
         {
             _textWriter.WriteLine("Du har inga filmer i samlingen");

@@ -1,4 +1,5 @@
-﻿using BDD.SpecFlow.IoC.End.Domain.Infrastructure;
+﻿using System;
+using BDD.SpecFlow.IoC.End.Domain.Infrastructure;
 using BDD.SpecFlow.IoC.End.Domain.Vyer;
 
 namespace BDD.SpecFlow.IoC.End.Domain.Model
@@ -18,12 +19,22 @@ namespace BDD.SpecFlow.IoC.End.Domain.Model
 
         public void AntalFilmer()
         {
-            // starta session
             _sessionHelper.StartSession();
             
             var vy = _vyRepository.HämtaVy<AntalFilmerVy>(VyNamn.ANTAL_FILMER);
 
             vy.Presentera(_filmRepository.HämtaAlla().Count);
+
+            _sessionHelper.CloseSession();
+        }
+
+        public void ListaFilmer()
+        {
+            _sessionHelper.StartSession();
+
+            var vy = _vyRepository.HämtaVy<ListaFilmerVy>(VyNamn.LISTA_FILMER);
+
+            vy.Presentera(_filmRepository.HämtaAlla());
 
             _sessionHelper.CloseSession();
         }

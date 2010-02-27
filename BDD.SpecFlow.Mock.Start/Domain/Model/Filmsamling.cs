@@ -18,7 +18,6 @@ namespace BDD.SpecFlow.Mock.Start.Domain.Model
 
         public void AntalFilmer()
         {
-            // starta session
             _sessionHelper.StartSession();
             
             var vy = _vyRepository.HämtaVy<AntalFilmerVy>(VyNamn.ANTAL_FILMER);

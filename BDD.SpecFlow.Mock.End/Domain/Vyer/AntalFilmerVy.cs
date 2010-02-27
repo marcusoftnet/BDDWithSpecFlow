@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace BDD.SpecFlow.Mock.End.Domain.Vyer
 {
@@ -9,11 +10,6 @@ namespace BDD.SpecFlow.Mock.End.Domain.Vyer
         public AntalFilmerVy(TextWriter textWriter)
         {
             _textWriter = textWriter;
-        }
-
-        public string Meddelande
-        {
-            get { return string.Empty; }
         }
 
         public void Presentera(int antalFilmer)

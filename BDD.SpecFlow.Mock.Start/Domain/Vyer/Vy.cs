@@ -2,6 +2,5 @@
 {
     public interface Vy
     {
-        string Meddelande { get; }
     }
 }

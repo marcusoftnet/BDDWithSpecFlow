@@ -15,6 +15,11 @@
             {
                 _filmsamling.AntalFilmer();
             }
+
+            if(kommando == "ListaFilmer")
+            {
+                _filmsamling.ListaFilmer();
+            }
         }
     }
 }
